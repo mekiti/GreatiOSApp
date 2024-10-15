@@ -14,7 +14,7 @@ struct LoginView: View {
                     .padding(.bottom, Constants.imagePadding)
                 EntryFieldView(placeHolder: Constants.usernameString, icon: .userIcon)
                     .padding(.bottom, Constants.entryFieldPadding)
-                EntryFieldView(placeHolder: Constants.passwordString, icon: .lockIcon)
+                EntryFieldView(placeHolder: Constants.passwordString, icon: .lockIcon, isSecure: true)
                     .padding(.bottom, Constants.buttonPadding)
                 Button {
 

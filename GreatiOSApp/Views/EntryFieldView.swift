@@ -3,12 +3,13 @@ import SwiftUI
 struct EntryFieldView: View {
     let placeHolder: String
     let icon: ImageResource
+    var isSecure = false
 
-    @State var text = ""
-    @State var isEditing = false
+    @State private var text = ""
+    @FocusState var isInFocus: Bool
 
     private var opacity: CGFloat {
-        isEditing ? 1 : 0.6
+        isInFocus ? 1 : 0.6
     }
 
     var body: some View {
@@ -21,10 +22,17 @@ struct EntryFieldView: View {
                 )
                 .padding(.leading, Constants.EntryFieldView.padding)
                 .opacity(opacity)
-            TextField(placeHolder, text: $text, onEditingChanged: { changed in
-                isEditing = changed
-            })
-                .padding(Constants.EntryFieldView.padding)
+            Group {
+                if isSecure {
+                    SecureField(placeHolder, text: $text)
+                } else {
+                    TextField(placeHolder, text: $text)
+                }
+            }
+            .focused($isInFocus)
+            .keyboardType(.asciiCapable)
+            .autocorrectionDisabled()
+            .padding(Constants.EntryFieldView.padding)
         }
         .background(
             RoundedRectangle(cornerRadius: Constants.cornerRadius)
@@ -34,6 +42,9 @@ struct EntryFieldView: View {
 }
 
 #Preview {
-    EntryFieldView(placeHolder: "placeHolder", icon: .lockIcon)
-        .padding()
+    VStack {
+        EntryFieldView(placeHolder: "placeHolder", icon: .lockIcon)
+        EntryFieldView(placeHolder: "placeHolder", icon: .lockIcon, isSecure: true)
+    }
+    .padding()
 }
