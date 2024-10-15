@@ -10,6 +10,10 @@
 		D36629412CBE60F100C67CEA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629402CBE60F100C67CEA /* LoginView.swift */; };
 		D36629442CBE622300C67CEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629432CBE621C00C67CEA /* Constants.swift */; };
 		D36629862CBE762400C67CEA /* EntryFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629852CBE762400C67CEA /* EntryFieldView.swift */; };
+		D36629882CBE852900C67CEA /* ServerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629872CBE852900C67CEA /* ServerListView.swift */; };
+		D36629952CBE945F00C67CEA /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629942CBE945F00C67CEA /* Server.swift */; };
+		D36629972CBE947800C67CEA /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629962CBE947800C67CEA /* SortBy.swift */; };
+		D36629992CBE949D00C67CEA /* ServerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629982CBE949D00C67CEA /* ServerListCell.swift */; };
 		D37FE03A2CBE5D9200464AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */; };
 		D37FE03B2CBE5D9200464AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0352CBE5D9200464AC0 /* Assets.xcassets */; };
 		D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FE0382CBE5D9200464AC0 /* GreatiOSAppApp.swift */; };
@@ -19,6 +23,10 @@
 		D36629402CBE60F100C67CEA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D36629432CBE621C00C67CEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D36629852CBE762400C67CEA /* EntryFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFieldView.swift; sourceTree = "<group>"; };
+		D36629872CBE852900C67CEA /* ServerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListView.swift; sourceTree = "<group>"; };
+		D36629942CBE945F00C67CEA /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
+		D36629962CBE947800C67CEA /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
+		D36629982CBE949D00C67CEA /* ServerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListCell.swift; sourceTree = "<group>"; };
 		D37FE0172CBE5CA900464AC0 /* GreatiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D37FE0352CBE5D9200464AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -41,7 +49,9 @@
 			isa = PBXGroup;
 			children = (
 				D36629402CBE60F100C67CEA /* LoginView.swift */,
+				D36629872CBE852900C67CEA /* ServerListView.swift */,
 				D36629852CBE762400C67CEA /* EntryFieldView.swift */,
+				D36629982CBE949D00C67CEA /* ServerListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -52,6 +62,15 @@
 				D36629432CBE621C00C67CEA /* Constants.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		D36629932CBE945600C67CEA /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D36629942CBE945F00C67CEA /* Server.swift */,
+				D36629962CBE947800C67CEA /* SortBy.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		D37FE00E2CBE5CA900464AC0 = {
@@ -81,6 +100,7 @@
 		D37FE0392CBE5D9200464AC0 /* GreatiOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				D36629932CBE945600C67CEA /* Models */,
 				D36629422CBE621500C67CEA /* Constants */,
 				D366293F2CBE60D900C67CEA /* Views */,
 				D37FE0342CBE5D9200464AC0 /* Preview Content */,
@@ -166,8 +186,12 @@
 			files = (
 				D36629862CBE762400C67CEA /* EntryFieldView.swift in Sources */,
 				D36629412CBE60F100C67CEA /* LoginView.swift in Sources */,
+				D36629992CBE949D00C67CEA /* ServerListCell.swift in Sources */,
+				D36629882CBE852900C67CEA /* ServerListView.swift in Sources */,
 				D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */,
+				D36629952CBE945F00C67CEA /* Server.swift in Sources */,
 				D36629442CBE622300C67CEA /* Constants.swift in Sources */,
+				D36629972CBE947800C67CEA /* SortBy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
