@@ -9,7 +9,7 @@
 When you’re done, prepare an archive and send it to us
 
 
-## Few simple requirements**
+## Few simple requirements
 
 
 * Create a 2 screen app. First is the login screen, second is the server list. After login, the user should access a server list screen. If you implemented credential storage, on app open, the user should skip the login screen and start from the server list screen.
@@ -21,7 +21,7 @@ Request body:
 
 `{"username": "tesonet", "password": "partyanimal"}`
 
-* Get servers list from https://playground.nordsec.com/v1/servers. Add header to request: Authorization: Bearer <token> *
+* Get servers list from https://playground.nordsec.com/v1/servers. Add header to request: Authorization: Bearer <token>
 * Create persistent layer to store servers
 * Handle 401 response
 * Write unit/integration tests
