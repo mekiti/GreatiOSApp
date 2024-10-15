@@ -14,6 +14,9 @@
 		D36629952CBE945F00C67CEA /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629942CBE945F00C67CEA /* Server.swift */; };
 		D36629972CBE947800C67CEA /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629962CBE947800C67CEA /* SortBy.swift */; };
 		D36629992CBE949D00C67CEA /* ServerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629982CBE949D00C67CEA /* ServerListCell.swift */; };
+		D366299C2CBE96B900C67CEA /* ServerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366299B2CBE96B900C67CEA /* ServerListViewModel.swift */; };
+		D366299F2CBE975F00C67CEA /* ServersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366299E2CBE975F00C67CEA /* ServersRepository.swift */; };
+		D36629A22CBE97DA00C67CEA /* ServersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A12CBE97DA00C67CEA /* ServersService.swift */; };
 		D37FE03A2CBE5D9200464AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */; };
 		D37FE03B2CBE5D9200464AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0352CBE5D9200464AC0 /* Assets.xcassets */; };
 		D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FE0382CBE5D9200464AC0 /* GreatiOSAppApp.swift */; };
@@ -27,6 +30,9 @@
 		D36629942CBE945F00C67CEA /* Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Server.swift; sourceTree = "<group>"; };
 		D36629962CBE947800C67CEA /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
 		D36629982CBE949D00C67CEA /* ServerListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListCell.swift; sourceTree = "<group>"; };
+		D366299B2CBE96B900C67CEA /* ServerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewModel.swift; sourceTree = "<group>"; };
+		D366299E2CBE975F00C67CEA /* ServersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersRepository.swift; sourceTree = "<group>"; };
+		D36629A12CBE97DA00C67CEA /* ServersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersService.swift; sourceTree = "<group>"; };
 		D37FE0172CBE5CA900464AC0 /* GreatiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D37FE0352CBE5D9200464AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +79,30 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		D366299A2CBE967C00C67CEA /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				D366299B2CBE96B900C67CEA /* ServerListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		D366299D2CBE96D400C67CEA /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				D366299E2CBE975F00C67CEA /* ServersRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
+		D36629A02CBE97B700C67CEA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				D36629A12CBE97DA00C67CEA /* ServersService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		D37FE00E2CBE5CA900464AC0 = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +130,9 @@
 		D37FE0392CBE5D9200464AC0 /* GreatiOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				D36629A02CBE97B700C67CEA /* Services */,
+				D366299D2CBE96D400C67CEA /* Repositories */,
+				D366299A2CBE967C00C67CEA /* ViewModels */,
 				D36629932CBE945600C67CEA /* Models */,
 				D36629422CBE621500C67CEA /* Constants */,
 				D366293F2CBE60D900C67CEA /* Views */,
@@ -190,7 +223,10 @@
 				D36629882CBE852900C67CEA /* ServerListView.swift in Sources */,
 				D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */,
 				D36629952CBE945F00C67CEA /* Server.swift in Sources */,
+				D36629A22CBE97DA00C67CEA /* ServersService.swift in Sources */,
+				D366299C2CBE96B900C67CEA /* ServerListViewModel.swift in Sources */,
 				D36629442CBE622300C67CEA /* Constants.swift in Sources */,
+				D366299F2CBE975F00C67CEA /* ServersRepository.swift in Sources */,
 				D36629972CBE947800C67CEA /* SortBy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
