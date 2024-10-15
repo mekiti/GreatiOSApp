@@ -17,6 +17,12 @@
 		D366299C2CBE96B900C67CEA /* ServerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366299B2CBE96B900C67CEA /* ServerListViewModel.swift */; };
 		D366299F2CBE975F00C67CEA /* ServersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366299E2CBE975F00C67CEA /* ServersRepository.swift */; };
 		D36629A22CBE97DA00C67CEA /* ServersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A12CBE97DA00C67CEA /* ServersService.swift */; };
+		D36629A42CBE9D2C00C67CEA /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A32CBE9D2C00C67CEA /* AuthRepository.swift */; };
+		D36629A62CBE9DF300C67CEA /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A52CBE9DF300C67CEA /* URLs.swift */; };
+		D36629A82CBEA49800C67CEA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A72CBEA49800C67CEA /* NetworkError.swift */; };
+		D36629AA2CBEA4BB00C67CEA /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A92CBEA4BB00C67CEA /* LoginCredentials.swift */; };
+		D36629AC2CBEA4CE00C67CEA /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629AB2CBEA4CE00C67CEA /* LoginResponse.swift */; };
+		D36629AE2CBEA4FF00C67CEA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629AD2CBEA4FF00C67CEA /* AuthService.swift */; };
 		D37FE03A2CBE5D9200464AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */; };
 		D37FE03B2CBE5D9200464AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0352CBE5D9200464AC0 /* Assets.xcassets */; };
 		D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FE0382CBE5D9200464AC0 /* GreatiOSAppApp.swift */; };
@@ -33,6 +39,12 @@
 		D366299B2CBE96B900C67CEA /* ServerListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListViewModel.swift; sourceTree = "<group>"; };
 		D366299E2CBE975F00C67CEA /* ServersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersRepository.swift; sourceTree = "<group>"; };
 		D36629A12CBE97DA00C67CEA /* ServersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServersService.swift; sourceTree = "<group>"; };
+		D36629A32CBE9D2C00C67CEA /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+		D36629A52CBE9DF300C67CEA /* URLs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLs.swift; sourceTree = "<group>"; };
+		D36629A72CBEA49800C67CEA /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		D36629A92CBEA4BB00C67CEA /* LoginCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentials.swift; sourceTree = "<group>"; };
+		D36629AB2CBEA4CE00C67CEA /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		D36629AD2CBEA4FF00C67CEA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		D37FE0172CBE5CA900464AC0 /* GreatiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D37FE0352CBE5D9200464AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				D36629432CBE621C00C67CEA /* Constants.swift */,
+				D36629A52CBE9DF300C67CEA /* URLs.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -75,6 +88,9 @@
 			children = (
 				D36629942CBE945F00C67CEA /* Server.swift */,
 				D36629962CBE947800C67CEA /* SortBy.swift */,
+				D36629A72CBEA49800C67CEA /* NetworkError.swift */,
+				D36629A92CBEA4BB00C67CEA /* LoginCredentials.swift */,
+				D36629AB2CBEA4CE00C67CEA /* LoginResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -91,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				D366299E2CBE975F00C67CEA /* ServersRepository.swift */,
+				D36629A32CBE9D2C00C67CEA /* AuthRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -99,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				D36629A12CBE97DA00C67CEA /* ServersService.swift */,
+				D36629AD2CBEA4FF00C67CEA /* AuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -218,14 +236,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				D36629862CBE762400C67CEA /* EntryFieldView.swift in Sources */,
+				D36629A82CBEA49800C67CEA /* NetworkError.swift in Sources */,
+				D36629A62CBE9DF300C67CEA /* URLs.swift in Sources */,
 				D36629412CBE60F100C67CEA /* LoginView.swift in Sources */,
 				D36629992CBE949D00C67CEA /* ServerListCell.swift in Sources */,
 				D36629882CBE852900C67CEA /* ServerListView.swift in Sources */,
+				D36629AC2CBEA4CE00C67CEA /* LoginResponse.swift in Sources */,
+				D36629AA2CBEA4BB00C67CEA /* LoginCredentials.swift in Sources */,
 				D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */,
 				D36629952CBE945F00C67CEA /* Server.swift in Sources */,
 				D36629A22CBE97DA00C67CEA /* ServersService.swift in Sources */,
 				D366299C2CBE96B900C67CEA /* ServerListViewModel.swift in Sources */,
 				D36629442CBE622300C67CEA /* Constants.swift in Sources */,
+				D36629A42CBE9D2C00C67CEA /* AuthRepository.swift in Sources */,
+				D36629AE2CBEA4FF00C67CEA /* AuthService.swift in Sources */,
 				D366299F2CBE975F00C67CEA /* ServersRepository.swift in Sources */,
 				D36629972CBE947800C67CEA /* SortBy.swift in Sources */,
 			);
