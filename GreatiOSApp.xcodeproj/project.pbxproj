@@ -12,7 +12,6 @@
 		D36629862CBE762400C67CEA /* EntryFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629852CBE762400C67CEA /* EntryFieldView.swift */; };
 		D37FE03A2CBE5D9200464AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */; };
 		D37FE03B2CBE5D9200464AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0352CBE5D9200464AC0 /* Assets.xcassets */; };
-		D37FE03C2CBE5D9200464AC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FE0362CBE5D9200464AC0 /* ContentView.swift */; };
 		D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FE0382CBE5D9200464AC0 /* GreatiOSAppApp.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,7 +22,6 @@
 		D37FE0172CBE5CA900464AC0 /* GreatiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D37FE0352CBE5D9200464AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D37FE0362CBE5D9200464AC0 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D37FE0372CBE5D9200464AC0 /* GreatiOSApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GreatiOSApp.entitlements; sourceTree = "<group>"; };
 		D37FE0382CBE5D9200464AC0 /* GreatiOSAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GreatiOSAppApp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,7 +40,6 @@
 		D366293F2CBE60D900C67CEA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D37FE0362CBE5D9200464AC0 /* ContentView.swift */,
 				D36629402CBE60F100C67CEA /* LoginView.swift */,
 				D36629852CBE762400C67CEA /* EntryFieldView.swift */,
 			);
@@ -169,7 +166,6 @@
 			files = (
 				D36629862CBE762400C67CEA /* EntryFieldView.swift in Sources */,
 				D36629412CBE60F100C67CEA /* LoginView.swift in Sources */,
-				D37FE03C2CBE5D9200464AC0 /* ContentView.swift in Sources */,
 				D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */,
 				D36629442CBE622300C67CEA /* Constants.swift in Sources */,
 			);
