@@ -1,12 +1,13 @@
 import SwiftUI
 
 struct EntryFieldView: View {
+    @Binding var text: String
+    @FocusState private var isInFocus: Bool
+
     let placeHolder: String
     let icon: ImageResource
     var isSecure = false
 
-    @State private var text = ""
-    @FocusState var isInFocus: Bool
 
     private var opacity: CGFloat {
         isInFocus ? 1 : 0.6
@@ -43,8 +44,8 @@ struct EntryFieldView: View {
 
 #Preview {
     VStack {
-        EntryFieldView(placeHolder: "placeHolder", icon: .lockIcon)
-        EntryFieldView(placeHolder: "placeHolder", icon: .lockIcon, isSecure: true)
+        EntryFieldView(text: .constant(""), placeHolder: "placeHolder", icon: .lockIcon)
+        EntryFieldView(text: .constant(""), placeHolder: "placeHolder", icon: .lockIcon, isSecure: true)
     }
     .padding()
 }

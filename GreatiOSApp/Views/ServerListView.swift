@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ServerListView: View {
-    @ObservedObject var viewModel: ServerListViewModel
+    @State var viewModel: ServerListViewModel
 
     @State private var showingAlert = false
     @State private var sort = SortBy.none

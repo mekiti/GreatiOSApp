@@ -23,6 +23,7 @@
 		D36629AA2CBEA4BB00C67CEA /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A92CBEA4BB00C67CEA /* LoginCredentials.swift */; };
 		D36629AC2CBEA4CE00C67CEA /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629AB2CBEA4CE00C67CEA /* LoginResponse.swift */; };
 		D36629AE2CBEA4FF00C67CEA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629AD2CBEA4FF00C67CEA /* AuthService.swift */; };
+		D36629B02CBEA63A00C67CEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629AF2CBEA63A00C67CEA /* LoginViewModel.swift */; };
 		D37FE03A2CBE5D9200464AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */; };
 		D37FE03B2CBE5D9200464AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0352CBE5D9200464AC0 /* Assets.xcassets */; };
 		D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FE0382CBE5D9200464AC0 /* GreatiOSAppApp.swift */; };
@@ -45,6 +46,7 @@
 		D36629A92CBEA4BB00C67CEA /* LoginCredentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCredentials.swift; sourceTree = "<group>"; };
 		D36629AB2CBEA4CE00C67CEA /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		D36629AD2CBEA4FF00C67CEA /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		D36629AF2CBEA63A00C67CEA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D37FE0172CBE5CA900464AC0 /* GreatiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D37FE0352CBE5D9200464AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -99,6 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				D366299B2CBE96B900C67CEA /* ServerListViewModel.swift */,
+				D36629AF2CBEA63A00C67CEA /* LoginViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				D36629882CBE852900C67CEA /* ServerListView.swift in Sources */,
 				D36629AC2CBEA4CE00C67CEA /* LoginResponse.swift in Sources */,
 				D36629AA2CBEA4BB00C67CEA /* LoginCredentials.swift in Sources */,
+				D36629B02CBEA63A00C67CEA /* LoginViewModel.swift in Sources */,
 				D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */,
 				D36629952CBE945F00C67CEA /* Server.swift in Sources */,
 				D36629A22CBE97DA00C67CEA /* ServersService.swift in Sources */,

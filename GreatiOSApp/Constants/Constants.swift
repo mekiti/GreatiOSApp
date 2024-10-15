@@ -12,6 +12,13 @@ struct Constants {
     static let distanceString = "Distance"
     static let sortByDistanceString = "Distance"
     static let sortAlphabeticallyString = "Alphabetical"
+    static let loginAlertTitle = "Verification Failed"
+    static let loginAlertMessage = "Your username or password is incorrect."
+    static let noEntryAlertTitle = "Verification Failed"
+    static let noEntryAlertMessage = "You must enter a username and password to log in."
+    static let unexpectedAlertTitle = "Unexpected Failed"
+    static let unexpectedAlertMessage = "Something unexpected happened, sorry!"
+    static let alertOk = "Ok"
     static let loginPadding = CGFloat(32)
     static let cornerRadius = CGFloat(10)
     static let texfieldIconSize = CGFloat(14)
