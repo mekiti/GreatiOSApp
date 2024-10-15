@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D36629412CBE60F100C67CEA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629402CBE60F100C67CEA /* LoginView.swift */; };
+		D36629442CBE622300C67CEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629432CBE621C00C67CEA /* Constants.swift */; };
+		D36629862CBE762400C67CEA /* EntryFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629852CBE762400C67CEA /* EntryFieldView.swift */; };
 		D37FE03A2CBE5D9200464AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */; };
 		D37FE03B2CBE5D9200464AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0352CBE5D9200464AC0 /* Assets.xcassets */; };
 		D37FE03C2CBE5D9200464AC0 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FE0362CBE5D9200464AC0 /* ContentView.swift */; };
@@ -14,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D36629402CBE60F100C67CEA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		D36629432CBE621C00C67CEA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D36629852CBE762400C67CEA /* EntryFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryFieldView.swift; sourceTree = "<group>"; };
 		D37FE0172CBE5CA900464AC0 /* GreatiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D37FE0352CBE5D9200464AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +39,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D366293F2CBE60D900C67CEA /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D37FE0362CBE5D9200464AC0 /* ContentView.swift */,
+				D36629402CBE60F100C67CEA /* LoginView.swift */,
+				D36629852CBE762400C67CEA /* EntryFieldView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D36629422CBE621500C67CEA /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D36629432CBE621C00C67CEA /* Constants.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
 		D37FE00E2CBE5CA900464AC0 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +84,10 @@
 		D37FE0392CBE5D9200464AC0 /* GreatiOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				D36629422CBE621500C67CEA /* Constants */,
+				D366293F2CBE60D900C67CEA /* Views */,
 				D37FE0342CBE5D9200464AC0 /* Preview Content */,
 				D37FE0352CBE5D9200464AC0 /* Assets.xcassets */,
-				D37FE0362CBE5D9200464AC0 /* ContentView.swift */,
 				D37FE0372CBE5D9200464AC0 /* GreatiOSApp.entitlements */,
 				D37FE0382CBE5D9200464AC0 /* GreatiOSAppApp.swift */,
 			);
@@ -142,8 +167,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36629862CBE762400C67CEA /* EntryFieldView.swift in Sources */,
+				D36629412CBE60F100C67CEA /* LoginView.swift in Sources */,
 				D37FE03C2CBE5D9200464AC0 /* ContentView.swift in Sources */,
 				D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */,
+				D36629442CBE622300C67CEA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
