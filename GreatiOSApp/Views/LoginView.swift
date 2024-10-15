@@ -11,11 +11,11 @@ struct LoginView: View {
 
             VStack(spacing: 0) {
                 Image(.logo)
-                    .padding(.bottom, 40)
+                    .padding(.bottom, Constants.imagePadding)
                 EntryFieldView(placeHolder: Constants.usernameString, icon: .userIcon)
-                    .padding(.bottom, 16)
+                    .padding(.bottom, Constants.entryFieldPadding)
                 EntryFieldView(placeHolder: Constants.passwordString, icon: .lockIcon)
-                    .padding(.bottom, 24)
+                    .padding(.bottom, Constants.buttonPadding)
                 Button {
 
                 } label: {
