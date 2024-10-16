@@ -66,14 +66,10 @@ struct LoginView: View {
             .navigationDestination(for: AppDestination.self) { destination in
                 switch destination {
                 case .servers:
-                    viewModel.coordinator.buildServer()
+                    viewModel.coordinator.buildServer(servers: viewModel.servers)
                         .navigationBarBackButtonHidden(true)
                 }
             }
         }
     }
-}
-
-#Preview {
-    LoginView(viewModel: LoginViewModel(authService: AuthService(repository: AuthRepositoryImpl()), coordinator: AppCoordinator()))
 }

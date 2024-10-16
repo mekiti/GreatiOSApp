@@ -5,4 +5,14 @@ struct Server: Identifiable, Decodable {
 
     let name: String
     let distance: Int
+
+    enum CodingKeys: String, CodingKey {
+        case name, distance
+    }
+}
+
+extension Server {
+    var distanceString: String {
+        "\(distance) km"
+    }
 }

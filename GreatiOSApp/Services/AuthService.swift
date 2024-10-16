@@ -10,6 +10,6 @@ class AuthService: AuthServiceProtocol {
     }
 
     func execute(credentials: LoginCredentials) async throws -> LoginResponse {
-        return try await repository.login(credentials: credentials)
+        try await repository.login(credentials: credentials)
     }
 }

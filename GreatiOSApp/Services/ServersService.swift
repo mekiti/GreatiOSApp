@@ -1,5 +1,5 @@
 protocol ServersServiceProtocol {
-    func execute() -> [Server]
+    func execute(token: String) async throws -> [Server]
 }
 
 class ServersService: ServersServiceProtocol {
@@ -9,7 +9,7 @@ class ServersService: ServersServiceProtocol {
         self.repository = repository
     }
 
-    func execute() -> [Server] {
-        return repository.getServers()
+    func execute(token: String) async throws -> [Server] {
+        try await repository.fetchServers(token: token)
     }
 }

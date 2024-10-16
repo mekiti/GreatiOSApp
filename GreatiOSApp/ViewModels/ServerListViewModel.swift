@@ -1,18 +1,20 @@
 import SwiftUI
 import Observation
 
-@Observable
-class ServerListViewModel {
-    var servers: [Server] = []
-    private let serversService: ServersService
+struct ServerListViewModel {
+    let servers: [Server]
+    var showingAlert = false
+    var sort = SortBy.none
 
-    init(serversService: ServersService) {
-        self.serversService = serversService
-        loadServers()
-    }
-
-    func loadServers() {
-        servers = serversService.execute()
+    var sortedServers: [Server] {
+        switch sort {
+        case .name:
+            return servers.sorted { $0.name.lowercased() < $1.name.lowercased() }
+        case .distance:
+            return servers.sorted { $0.distance < $1.distance }
+        case .none:
+            return servers
+        }
     }
 }
 

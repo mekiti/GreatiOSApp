@@ -4,25 +4,11 @@ import Observation
 struct ServerListView: View {
     @State var viewModel: ServerListViewModel
 
-    @State private var showingAlert = false
-    @State private var sort = SortBy.none
-
-    private var sortedServers: [Server] {
-        switch sort {
-        case .name:
-            return viewModel.servers.sorted { $0.name.lowercased() < $1.name.lowercased() }
-        case .distance:
-            return viewModel.servers.sorted { $0.distance < $1.distance }
-        case .none:
-            return viewModel.servers
-        }
-    }
-
     var body: some View {
         List {
             Section {
-                ForEach(sortedServers) { server in
-                    ServerListCell(server: server.name, distance: String(server.distance))
+                ForEach(viewModel.sortedServers) { server in
+                    ServerListCell(server: server.name, distance: server.distanceString)
                 }
             } header: {
                 HStack {
@@ -40,20 +26,20 @@ struct ServerListView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarLeading) {
                 Button {
-                    showingAlert = true
+                    viewModel.showingAlert = true
                 } label: {
                     HStack {
                         Image(.sortIcon)
                         Text(Constants.filterString)
                     }
                 }
-                .confirmationDialog("", isPresented: $showingAlert, titleVisibility: .hidden) {
+                .confirmationDialog("", isPresented: $viewModel.showingAlert, titleVisibility: .hidden) {
                     Button(Constants.sortByDistanceString) {
-                        sort = .distance
+                        viewModel.sort = .distance
                     }
 
                     Button(Constants.sortAlphabeticallyString) {
-                        sort = .name
+                        viewModel.sort = .name
                     }
                 }
             }
@@ -72,11 +58,5 @@ struct ServerListView: View {
 }
 
 #Preview {
-    ServerListView(
-        viewModel: ServerListViewModel(
-            serversService: ServersService(
-                repository: ServerRepositoryImpl()
-            )
-        )
-    )
+    ServerListView(viewModel: ServerListViewModel(servers: []))
 }

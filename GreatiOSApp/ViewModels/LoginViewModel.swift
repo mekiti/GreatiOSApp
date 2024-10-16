@@ -4,6 +4,7 @@ import Observation
 @Observable
 class LoginViewModel: @unchecked Sendable {
     private let authService: AuthServiceProtocol
+    private let serversService: ServersServiceProtocol
     private var alertTitle: String?
     private var alertMessage: String?
     private var loginCredentials: LoginResponse?
@@ -13,6 +14,7 @@ class LoginViewModel: @unchecked Sendable {
     var username: String = ""
     var password: String = ""
     var showingAlert: Bool = false
+    var servers: [Server] = []
 
     var alertTitleString: String {
         alertTitle ?? Constants.unexpectedAlertTitle
@@ -22,15 +24,13 @@ class LoginViewModel: @unchecked Sendable {
         alertMessage ?? Constants.unexpectedAlertMessage
     }
 
-    init(authService: AuthServiceProtocol, coordinator: AppCoordinator) {
+    init(authService: AuthServiceProtocol, serversService: ServersServiceProtocol, coordinator: AppCoordinator) {
         self.authService = authService
+        self.serversService = serversService
         self.coordinator = coordinator
     }
 
     func login() async {
-        await didFinishLoading()
-
-        return
         guard !username.isEmpty || !password.isEmpty else {
             alertTitle = Constants.noEntryAlertTitle
             alertMessage = Constants.noEntryAlertMessage
@@ -46,7 +46,13 @@ class LoginViewModel: @unchecked Sendable {
                 )
             )
 
-            await didFinishLoading()
+            if let loginCredentials {
+                servers = try await serversService.execute(token: loginCredentials.token)
+                await didFinishLoading()
+            } else {
+                throw NetworkError.response("Failed to fetch data")
+            }
+
         } catch {
             alertTitle = Constants.loginAlertTitle
             alertMessage = Constants.loginAlertMessage

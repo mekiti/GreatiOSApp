@@ -1,24 +1,26 @@
+import Foundation
+
 protocol ServersRepository {
-    func getServers() -> [Server]
+    func fetchServers(token: String) async throws -> [Server]
 }
 
 class ServerRepositoryImpl: ServersRepository {
-    func getServers() -> [Server] {
-        return [
-            .init(name: "Canada #10", distance: 400),
-            .init(name: "Canada #10", distance: 500),
-            .init(name: "Canada #10", distance: 4000),
-            .init(name: "Canada #10", distance: 100),
-            .init(name: "Canada #344", distance: 6000),
-            .init(name: "bCanada #10", distance: 5500),
-            .init(name: "Canada #10", distance: 2500),
-            .init(name: "Canada #10", distance: 3000),
-            .init(name: "dCanada #10", distance: 4509),
-            .init(name: "Canada #10", distance: 4345),
-            .init(name: "eCanada #10", distance: 1234),
-            .init(name: "eCanada #10", distance: 3344),
-            .init(name: "aCanada #10", distance: 1234),
-            .init(name: "Canada #10", distance: 6643),
-        ]
+    func fetchServers(token: String) async throws -> [Server] {
+        let serversURL = URL(string: URLs.serversURL)!
+
+        var request = URLRequest(url: serversURL)
+        request.httpMethod = "GET"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.setValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+
+        let (data, response) = try await URLSession.shared.data(for: request)
+
+        if let httpResponse = response as? HTTPURLResponse, !(200...299).contains(httpResponse.statusCode) {
+            throw NetworkError.response("Server fetch failed with status code \(httpResponse.statusCode)")
+        }
+
+        let servers = try JSONDecoder().decode([Server].self, from: data)
+
+        return servers
     }
 }
