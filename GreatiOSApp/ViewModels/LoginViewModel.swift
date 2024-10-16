@@ -2,12 +2,13 @@ import SwiftUI
 import Observation
 
 @Observable
-class LoginViewModel {
+class LoginViewModel: @unchecked Sendable {
     private let authService: AuthServiceProtocol
     private var alertTitle: String?
     private var alertMessage: String?
     private var loginCredentials: LoginResponse?
 
+    var coordinator: AppCoordinator
     var isLoading: Bool = false
     var username: String = ""
     var password: String = ""
@@ -21,11 +22,15 @@ class LoginViewModel {
         alertMessage ?? Constants.unexpectedAlertMessage
     }
 
-    init(authService: AuthServiceProtocol) {
+    init(authService: AuthServiceProtocol, coordinator: AppCoordinator) {
         self.authService = authService
+        self.coordinator = coordinator
     }
 
     func login() async {
+        await didFinishLoading()
+
+        return
         guard !username.isEmpty || !password.isEmpty else {
             alertTitle = Constants.noEntryAlertTitle
             alertMessage = Constants.noEntryAlertMessage
@@ -40,11 +45,18 @@ class LoginViewModel {
                     password: password
                 )
             )
+
+            await didFinishLoading()
         } catch {
             alertTitle = Constants.loginAlertTitle
             alertMessage = Constants.loginAlertMessage
             showingAlert = true
         }
+    }
+
+    @MainActor
+    func didFinishLoading() {
+        coordinator.showServers()
     }
 }
 

@@ -2,7 +2,7 @@ import SwiftUI
 import Observation
 
 @Observable
-class ServerListViewModel: ObservableObject {
+class ServerListViewModel {
     var servers: [Server] = []
     private let serversService: ServersService
 

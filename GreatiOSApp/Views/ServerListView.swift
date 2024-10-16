@@ -1,4 +1,5 @@
 import SwiftUI
+import Observation
 
 struct ServerListView: View {
     @State var viewModel: ServerListViewModel
@@ -18,56 +19,55 @@ struct ServerListView: View {
     }
 
     var body: some View {
-        NavigationStack {
-            List {
-                Section {
-                    ForEach(sortedServers) { server in
-                        ServerListCell(server: server.name, distance: String(server.distance))
-                    }
-                } header: {
+        List {
+            Section {
+                ForEach(sortedServers) { server in
+                    ServerListCell(server: server.name, distance: String(server.distance))
+                }
+            } header: {
+                HStack {
+                    Text(Constants.serverString.uppercased())
+                        .font(.caption)
+                    Spacer()
+                    Text(Constants.distanceString.uppercased())
+                        .font(.caption)
+                }
+            }
+        }
+        .listStyle(.grouped)
+        .navigationTitle(Constants.titleString)
+        .navigationBarTitleDisplayMode(.inline)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarLeading) {
+                Button {
+                    showingAlert = true
+                } label: {
                     HStack {
-                        Text(Constants.serverString.uppercased())
-                            .font(.caption)
-                        Spacer()
-                        Text(Constants.distanceString.uppercased())
-                            .font(.caption)
+                        Image(.sortIcon)
+                        Text(Constants.filterString)
+                    }
+                }
+                .confirmationDialog("", isPresented: $showingAlert, titleVisibility: .hidden) {
+                    Button(Constants.sortByDistanceString) {
+                        sort = .distance
+                    }
+
+                    Button(Constants.sortAlphabeticallyString) {
+                        sort = .name
                     }
                 }
             }
-            .listStyle(.grouped)
-            .navigationTitle(Constants.titleString)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button {
-                        showingAlert = true
-                    } label: {
-                        HStack {
-                            Image(.sortIcon)
-                            Text(Constants.filterString)
-                        }
-                    }
-                    .confirmationDialog("", isPresented: $showingAlert, titleVisibility: .hidden) {
-                        Button(Constants.sortByDistanceString) {
-                            sort = .distance
-                        }
-
-                        Button(Constants.sortAlphabeticallyString) {
-                            sort = .name
-                        }
-                    }
-                }
-                ToolbarItem(placement: .topBarTrailing) {
-                    Button {
-                    } label: {
-                        HStack {
-                            Text(Constants.logoutString)
-                            Image(.logoutIcon)
-                        }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button {
+                } label: {
+                    HStack {
+                        Text(Constants.logoutString)
+                        Image(.logoutIcon)
                     }
                 }
             }
         }
+
     }
 }
 

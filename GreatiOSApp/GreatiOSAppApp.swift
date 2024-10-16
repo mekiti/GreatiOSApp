@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct GreatiOSAppApp: App {
+    @State private var coordinator = AppCoordinator()
+
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            coordinator.start()
         }
     }
 }
