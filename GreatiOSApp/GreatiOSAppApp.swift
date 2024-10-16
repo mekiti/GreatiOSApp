@@ -1,10 +1,3 @@
-//
-//  GreatiOSAppApp.swift
-//  GreatiOSApp
-//
-//  Created by Domas Zaboras on 15/10/2024.
-//
-
 import SwiftUI
 import SwiftData
 

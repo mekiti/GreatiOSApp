@@ -36,7 +36,6 @@ class KeychainWrapper {
         var item: CFTypeRef?
 
         if SecItemCopyMatching(query as CFDictionary, &item) == noErr {
-            // Extract result
             if let existingItem = item as? [String: Any],
                let username = existingItem[kSecAttrAccount as String] as? String,
                let passwordData = existingItem[kSecValueData as String] as? Data,

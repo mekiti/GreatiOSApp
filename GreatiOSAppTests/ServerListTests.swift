@@ -1,10 +1,3 @@
-//
-//  ServerListTests.swift
-//  GreatiOSAppTests
-//
-//  Created by Domas Zaboras on 16/10/2024.
-//
-
 import Testing
 import Foundation
 

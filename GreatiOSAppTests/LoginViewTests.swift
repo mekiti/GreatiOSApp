@@ -57,17 +57,14 @@ struct LoginViewTests {
     }
 
     @Test("Test successful login") func testSuccessLogin() async {
-        // Arrange
         serversService.mockServers = [Server(name: "TestServer", distance: 100)]
 
         let viewModel = await setupVM()
         viewModel.username = "testUser"
         viewModel.password = "testPass"
 
-        // Act
         await viewModel.initiateLogin()
 
-        // Assert
         #expect(viewModel.servers.count == 1)
         await #expect((viewModel.coordinator as? MockCoordinator)?.showServersCalled == true)
     }
