@@ -1,7 +1,8 @@
 import Foundation
+import Observation
 
 @MainActor
-final class TokenManager {
+class TokenManager {
     static let shared = TokenManager()
 
     private var token: String? = nil

@@ -30,10 +30,51 @@
 		D3662A062CBFBC8500C67CEA /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A052CBFBC8500C67CEA /* TokenManager.swift */; };
 		D3662A082CBFC4C400C67CEA /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A072CBFC4C400C67CEA /* Method.swift */; };
 		D3662A0A2CBFCD0000C67CEA /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A092CBFCD0000C67CEA /* KeychainWrapper.swift */; };
+		D3662A182CBFDA7000C67CEA /* ServerListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366299B2CBE96B900C67CEA /* ServerListViewModel.swift */; };
+		D3662A192CBFDB5C00C67CEA /* Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629942CBE945F00C67CEA /* Server.swift */; };
+		D3662A1A2CBFDB8600C67CEA /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629962CBE947800C67CEA /* SortBy.swift */; };
+		D3662A1D2CBFDC4A00C67CEA /* KeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A092CBFCD0000C67CEA /* KeychainWrapper.swift */; };
+		D3662A1E2CBFDC5900C67CEA /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A052CBFBC8500C67CEA /* TokenManager.swift */; };
+		D3662A1F2CBFDC6200C67CEA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629432CBE621C00C67CEA /* Constants.swift */; };
+		D3662A202CBFDC7100C67CEA /* LoginCredentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A92CBEA4BB00C67CEA /* LoginCredentials.swift */; };
+		D3662A232CBFE8C400C67CEA /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629AD2CBEA4FF00C67CEA /* AuthService.swift */; };
+		D3662A242CBFE8D000C67CEA /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A32CBE9D2C00C67CEA /* AuthRepository.swift */; };
+		D3662A252CBFE8DB00C67CEA /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629AB2CBEA4CE00C67CEA /* LoginResponse.swift */; };
+		D3662A262CBFE8F400C67CEA /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A72CBEA49800C67CEA /* NetworkError.swift */; };
+		D3662A2E2CBFE91600C67CEA /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A292CBFE91600C67CEA /* LoginViewTests.swift */; };
+		D3662A2F2CBFE91600C67CEA /* MockKeychainWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A2A2CBFE91600C67CEA /* MockKeychainWrapper.swift */; };
+		D3662A302CBFE91600C67CEA /* ServerListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A2B2CBFE91600C67CEA /* ServerListTests.swift */; };
+		D3662A312CBFE91600C67CEA /* TokenManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A2C2CBFE91600C67CEA /* TokenManagerTests.swift */; };
+		D3662A332CBFE95C00C67CEA /* MockAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A322CBFE95C00C67CEA /* MockAuthService.swift */; };
+		D3662A342CBFE98C00C67CEA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629FE2CBEB4EA00C67CEA /* AppCoordinator.swift */; };
+		D3662A352CBFE99400C67CEA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629FC2CBEB4B000C67CEA /* Coordinator.swift */; };
+		D3662A372CBFE9AA00C67CEA /* MockCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A362CBFE9AA00C67CEA /* MockCoordinator.swift */; };
+		D3662A392CBFEA0D00C67CEA /* MockServersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A382CBFEA0D00C67CEA /* MockServersService.swift */; };
+		D3662A3A2CBFEA2600C67CEA /* ServersService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A12CBE97DA00C67CEA /* ServersService.swift */; };
+		D3662A3B2CBFEA9800C67CEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629AF2CBEA63A00C67CEA /* LoginViewModel.swift */; };
+		D3662A3C2CBFEB6800C67CEA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A032CBFB93B00C67CEA /* APIManager.swift */; };
+		D3662A3D2CBFEB7200C67CEA /* URLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629A52CBE9DF300C67CEA /* URLs.swift */; };
+		D3662A3E2CBFEB8B00C67CEA /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A072CBFC4C400C67CEA /* Method.swift */; };
+		D3662A3F2CBFEBA400C67CEA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629402CBE60F100C67CEA /* LoginView.swift */; };
+		D3662A402CBFEBAE00C67CEA /* ServersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = D366299E2CBE975F00C67CEA /* ServersRepository.swift */; };
+		D3662A412CBFEBC000C67CEA /* EntryFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629852CBE762400C67CEA /* EntryFieldView.swift */; };
+		D3662A422CBFEBDF00C67CEA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0352CBE5D9200464AC0 /* Assets.xcassets */; };
+		D3662A432CBFEBF800C67CEA /* ServerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629872CBE852900C67CEA /* ServerListView.swift */; };
+		D3662A442CBFEC0C00C67CEA /* ServerListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629982CBE949D00C67CEA /* ServerListCell.swift */; };
 		D37FE03A2CBE5D9200464AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */; };
 		D37FE03B2CBE5D9200464AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0352CBE5D9200464AC0 /* Assets.xcassets */; };
 		D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FE0382CBE5D9200464AC0 /* GreatiOSAppApp.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D3662A132CBFD89A00C67CEA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D37FE00F2CBE5CA900464AC0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D37FE0162CBE5CA900464AC0;
+			remoteInfo = GreatiOSApp;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		D36629402CBE60F100C67CEA /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -59,6 +100,14 @@
 		D3662A052CBFBC8500C67CEA /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
 		D3662A072CBFC4C400C67CEA /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		D3662A092CBFCD0000C67CEA /* KeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainWrapper.swift; sourceTree = "<group>"; };
+		D3662A0F2CBFD89A00C67CEA /* GreatiOSAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GreatiOSAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D3662A292CBFE91600C67CEA /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
+		D3662A2A2CBFE91600C67CEA /* MockKeychainWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockKeychainWrapper.swift; sourceTree = "<group>"; };
+		D3662A2B2CBFE91600C67CEA /* ServerListTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerListTests.swift; sourceTree = "<group>"; };
+		D3662A2C2CBFE91600C67CEA /* TokenManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManagerTests.swift; sourceTree = "<group>"; };
+		D3662A322CBFE95C00C67CEA /* MockAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAuthService.swift; sourceTree = "<group>"; };
+		D3662A362CBFE9AA00C67CEA /* MockCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinator.swift; sourceTree = "<group>"; };
+		D3662A382CBFEA0D00C67CEA /* MockServersService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockServersService.swift; sourceTree = "<group>"; };
 		D37FE0172CBE5CA900464AC0 /* GreatiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D37FE0352CBE5D9200464AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,6 +116,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		D3662A0C2CBFD89A00C67CEA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D37FE0142CBE5CA900464AC0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -156,10 +212,25 @@
 			path = API;
 			sourceTree = "<group>";
 		};
+		D3662A2D2CBFE91600C67CEA /* GreatiOSAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				D3662A2A2CBFE91600C67CEA /* MockKeychainWrapper.swift */,
+				D3662A322CBFE95C00C67CEA /* MockAuthService.swift */,
+				D3662A382CBFEA0D00C67CEA /* MockServersService.swift */,
+				D3662A362CBFE9AA00C67CEA /* MockCoordinator.swift */,
+				D3662A292CBFE91600C67CEA /* LoginViewTests.swift */,
+				D3662A2B2CBFE91600C67CEA /* ServerListTests.swift */,
+				D3662A2C2CBFE91600C67CEA /* TokenManagerTests.swift */,
+			);
+			path = GreatiOSAppTests;
+			sourceTree = "<group>";
+		};
 		D37FE00E2CBE5CA900464AC0 = {
 			isa = PBXGroup;
 			children = (
 				D37FE0392CBE5D9200464AC0 /* GreatiOSApp */,
+				D3662A2D2CBFE91600C67CEA /* GreatiOSAppTests */,
 				D37FE0182CBE5CA900464AC0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -168,6 +239,7 @@
 			isa = PBXGroup;
 			children = (
 				D37FE0172CBE5CA900464AC0 /* GreatiOSApp.app */,
+				D3662A0F2CBFD89A00C67CEA /* GreatiOSAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -202,6 +274,26 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		D3662A0E2CBFD89A00C67CEA /* GreatiOSAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D3662A152CBFD89B00C67CEA /* Build configuration list for PBXNativeTarget "GreatiOSAppTests" */;
+			buildPhases = (
+				D3662A0B2CBFD89A00C67CEA /* Sources */,
+				D3662A0C2CBFD89A00C67CEA /* Frameworks */,
+				D3662A0D2CBFD89A00C67CEA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D3662A142CBFD89A00C67CEA /* PBXTargetDependency */,
+			);
+			name = GreatiOSAppTests;
+			packageProductDependencies = (
+			);
+			productName = GreatiOSAppTests;
+			productReference = D3662A0F2CBFD89A00C67CEA /* GreatiOSAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D37FE0162CBE5CA900464AC0 /* GreatiOSApp */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D37FE0262CBE5CAA00464AC0 /* Build configuration list for PBXNativeTarget "GreatiOSApp" */;
@@ -231,6 +323,10 @@
 				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1600;
 				TargetAttributes = {
+					D3662A0E2CBFD89A00C67CEA = {
+						CreatedOnToolsVersion = 16.0;
+						TestTargetID = D37FE0162CBE5CA900464AC0;
+					};
 					D37FE0162CBE5CA900464AC0 = {
 						CreatedOnToolsVersion = 16.0;
 					};
@@ -251,11 +347,20 @@
 			projectRoot = "";
 			targets = (
 				D37FE0162CBE5CA900464AC0 /* GreatiOSApp */,
+				D3662A0E2CBFD89A00C67CEA /* GreatiOSAppTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		D3662A0D2CBFD89A00C67CEA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3662A422CBFEBDF00C67CEA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D37FE0152CBE5CA900464AC0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -268,6 +373,43 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		D3662A0B2CBFD89A00C67CEA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D3662A3E2CBFEB8B00C67CEA /* Method.swift in Sources */,
+				D3662A202CBFDC7100C67CEA /* LoginCredentials.swift in Sources */,
+				D3662A262CBFE8F400C67CEA /* NetworkError.swift in Sources */,
+				D3662A3B2CBFEA9800C67CEA /* LoginViewModel.swift in Sources */,
+				D3662A342CBFE98C00C67CEA /* AppCoordinator.swift in Sources */,
+				D3662A192CBFDB5C00C67CEA /* Server.swift in Sources */,
+				D3662A372CBFE9AA00C67CEA /* MockCoordinator.swift in Sources */,
+				D3662A1A2CBFDB8600C67CEA /* SortBy.swift in Sources */,
+				D3662A1D2CBFDC4A00C67CEA /* KeychainWrapper.swift in Sources */,
+				D3662A232CBFE8C400C67CEA /* AuthService.swift in Sources */,
+				D3662A3F2CBFEBA400C67CEA /* LoginView.swift in Sources */,
+				D3662A252CBFE8DB00C67CEA /* LoginResponse.swift in Sources */,
+				D3662A412CBFEBC000C67CEA /* EntryFieldView.swift in Sources */,
+				D3662A352CBFE99400C67CEA /* Coordinator.swift in Sources */,
+				D3662A182CBFDA7000C67CEA /* ServerListViewModel.swift in Sources */,
+				D3662A242CBFE8D000C67CEA /* AuthRepository.swift in Sources */,
+				D3662A3A2CBFEA2600C67CEA /* ServersService.swift in Sources */,
+				D3662A392CBFEA0D00C67CEA /* MockServersService.swift in Sources */,
+				D3662A2E2CBFE91600C67CEA /* LoginViewTests.swift in Sources */,
+				D3662A432CBFEBF800C67CEA /* ServerListView.swift in Sources */,
+				D3662A2F2CBFE91600C67CEA /* MockKeychainWrapper.swift in Sources */,
+				D3662A302CBFE91600C67CEA /* ServerListTests.swift in Sources */,
+				D3662A312CBFE91600C67CEA /* TokenManagerTests.swift in Sources */,
+				D3662A3D2CBFEB7200C67CEA /* URLs.swift in Sources */,
+				D3662A442CBFEC0C00C67CEA /* ServerListCell.swift in Sources */,
+				D3662A332CBFE95C00C67CEA /* MockAuthService.swift in Sources */,
+				D3662A3C2CBFEB6800C67CEA /* APIManager.swift in Sources */,
+				D3662A1E2CBFDC5900C67CEA /* TokenManager.swift in Sources */,
+				D3662A1F2CBFDC6200C67CEA /* Constants.swift in Sources */,
+				D3662A402CBFEBAE00C67CEA /* ServersRepository.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D37FE0132CBE5CA900464AC0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -301,7 +443,56 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		D3662A142CBFD89A00C67CEA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D37FE0162CBE5CA900464AC0 /* GreatiOSApp */;
+			targetProxy = D3662A132CBFD89A00C67CEA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		D3662A162CBFD89B00C67CEA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PYA5FXSJ82;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dz.GreatiOSAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreatiOSApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GreatiOSApp";
+			};
+			name = Debug;
+		};
+		D3662A172CBFD89B00C67CEA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = PYA5FXSJ82;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = dz.GreatiOSAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/GreatiOSApp.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/GreatiOSApp";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		D37FE0242CBE5CAA00464AC0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -497,6 +688,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		D3662A152CBFD89B00C67CEA /* Build configuration list for PBXNativeTarget "GreatiOSAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D3662A162CBFD89B00C67CEA /* Debug */,
+				D3662A172CBFD89B00C67CEA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D37FE0122CBE5CA900464AC0 /* Build configuration list for PBXProject "GreatiOSApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

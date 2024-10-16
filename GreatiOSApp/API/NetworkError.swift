@@ -5,4 +5,5 @@ enum NetworkError: Error {
     case noToken
     case badURL
     case noCredentials
+    case unavailable
 }

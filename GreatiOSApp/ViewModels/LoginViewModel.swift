@@ -3,7 +3,7 @@ import Observation
 
 @Observable
 class LoginViewModel: @unchecked Sendable {
-    private let keychainWrapper = KeychainWrapper()
+    private let keychainWrapper: KeychainWrapper
     private let authService: AuthServiceProtocol
     private let serversService: ServersServiceProtocol
     private var alertTitle: String?
@@ -24,36 +24,40 @@ class LoginViewModel: @unchecked Sendable {
         alertMessage ?? Constants.unexpectedAlertMessage
     }
 
-    init(authService: AuthServiceProtocol, serversService: ServersServiceProtocol, coordinator: AppCoordinator) {
+    init(
+        authService: AuthServiceProtocol,
+        serversService: ServersServiceProtocol,
+        coordinator: AppCoordinator,
+        keychainWrapper: KeychainWrapper = KeychainWrapper()
+    ) {
         self.authService = authService
         self.serversService = serversService
         self.coordinator = coordinator
+        self.keychainWrapper = keychainWrapper
     }
 
-    func performLoginIfUserSaved() async {
-        if let usernameKey = UserDefaults.standard.string(forKey: Constants.usernameKey),
-           let loginCredentials = await keychainWrapper.get(key: usernameKey) {
+    func checkIfUserSaved() async {
+        if let usernameKey = UserDefaults.standard.string(forKey: Constants.usernameKey) {
+            await performLoginIfUserSaved(user: usernameKey)
+        }
+    }
+
+    func performLoginIfUserSaved(user: String) async {
+        if let loginCredentials = await keychainWrapper.get(key: user) {
             username = loginCredentials.username
             password = loginCredentials.password
 
-            print("before initiateLogin")
             await initiateLogin()
         }
     }
 
     func initiateLogin() async {
-        print("isLoading")
         isLoading = true
         do {
-            print("inside do")
             try await login()
-            print("after login")
             try await fetchServers()
-            print("after fetchServers")
             isLoading = false
-            print("before showServers")
             await showServers()
-            print("after showServers")
         } catch NetworkError.noCredentials {
             alertTitle = Constants.noEntryAlertTitle
             alertMessage = Constants.noEntryAlertMessage

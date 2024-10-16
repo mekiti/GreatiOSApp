@@ -2,10 +2,22 @@ import SwiftUI
 import Observation
 
 struct ServerListViewModel {
-    private let keychainWrapper = KeychainWrapper()
+    private let keychainWrapper: KeychainWrapper
+    private let tokenManager: TokenManager
     let servers: [Server]
     var showingAlert = false
     var sort = SortBy.none
+
+    @MainActor
+    init(
+        keychainWrapper: KeychainWrapper = KeychainWrapper(),
+        tokenManager: TokenManager = TokenManager.shared,
+        servers: [Server]
+    ) {
+        self.keychainWrapper = keychainWrapper
+        self.tokenManager = tokenManager
+        self.servers = servers
+    }
 
     var sortedServers: [Server] {
         switch sort {
@@ -20,7 +32,7 @@ struct ServerListViewModel {
 
     @MainActor
     func logoutAction() {
-        TokenManager.shared.clear()
+        tokenManager.clear()
         if let username = UserDefaults.standard.string(forKey: Constants.usernameKey) {
             keychainWrapper.delete(key: username)
         }

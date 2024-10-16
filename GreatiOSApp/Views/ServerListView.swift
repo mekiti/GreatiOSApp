@@ -59,7 +59,3 @@ struct ServerListView: View {
 
     }
 }
-
-#Preview {
-    ServerListView(viewModel: ServerListViewModel(servers: []))
-}
