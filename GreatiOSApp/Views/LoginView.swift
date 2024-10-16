@@ -1,8 +1,11 @@
 import SwiftUI
 import Observation
+import SwiftData
 
 struct LoginView: View {
+    @Environment(\.modelContext) private var modelContext
     @State var viewModel: LoginViewModel
+    @Query private var savedServers: [Server]
 
     var body: some View {
         NavigationStack(path: $viewModel.coordinator.navigationPath) {
@@ -44,6 +47,7 @@ struct LoginView: View {
                         Button {
                             Task {
                                 await viewModel.initiateLogin()
+                                saveServerData()
                             }
                         } label: {
                             Text(Constants.loginString)
@@ -75,6 +79,24 @@ struct LoginView: View {
             Task {
                 await viewModel.checkIfUserSaved()
             }
+        }
+    }
+
+    private func saveServerData() {
+        do {
+            try modelContext.delete(model: Server.self)
+        } catch {
+            print("Failed to clear all server data.")
+        }
+
+        for server in viewModel.servers {
+            modelContext.insert(server)
+        }
+
+        do {
+            try modelContext.save()
+        } catch {
+            print("Failed to save all server data.")
         }
     }
 }

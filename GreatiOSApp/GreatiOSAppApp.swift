@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct GreatiOSAppApp: App {
@@ -15,5 +16,6 @@ struct GreatiOSAppApp: App {
         WindowGroup {
             coordinator.start()
         }
+        .modelContainer(for: [Server.self], isAutosaveEnabled: false)
     }
 }

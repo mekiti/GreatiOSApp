@@ -1,5 +1,6 @@
 import SwiftUI
 import Observation
+import SwiftData
 
 @Observable
 class LoginViewModel: @unchecked Sendable {
