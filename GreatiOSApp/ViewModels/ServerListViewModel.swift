@@ -2,6 +2,7 @@ import SwiftUI
 import Observation
 
 struct ServerListViewModel {
+    private let keychainWrapper = KeychainWrapper()
     let servers: [Server]
     var showingAlert = false
     var sort = SortBy.none
@@ -20,6 +21,9 @@ struct ServerListViewModel {
     @MainActor
     func logoutAction() {
         TokenManager.shared.clear()
+        if let username = UserDefaults.standard.string(forKey: Constants.usernameKey) {
+            keychainWrapper.delete(key: username)
+        }
     }
 }
 

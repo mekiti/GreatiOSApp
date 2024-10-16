@@ -71,5 +71,10 @@ struct LoginView: View {
                 }
             }
         }
+        .onAppear {
+            Task {
+                await viewModel.performLoginIfUserSaved()
+            }
+        }
     }
 }

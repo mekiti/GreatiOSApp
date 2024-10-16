@@ -19,6 +19,7 @@ struct Constants {
     static let unexpectedAlertTitle = "Unexpected Failed"
     static let unexpectedAlertMessage = "Something unexpected happened, sorry!"
     static let alertOk = "Ok"
+    static let usernameKey = "userName"
     static let loginPadding = CGFloat(32)
     static let cornerRadius = CGFloat(10)
     static let texfieldIconSize = CGFloat(14)

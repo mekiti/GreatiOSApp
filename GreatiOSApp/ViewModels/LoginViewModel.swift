@@ -3,6 +3,7 @@ import Observation
 
 @Observable
 class LoginViewModel: @unchecked Sendable {
+    private let keychainWrapper = KeychainWrapper()
     private let authService: AuthServiceProtocol
     private let serversService: ServersServiceProtocol
     private var alertTitle: String?
@@ -29,13 +30,30 @@ class LoginViewModel: @unchecked Sendable {
         self.coordinator = coordinator
     }
 
+    func performLoginIfUserSaved() async {
+        if let usernameKey = UserDefaults.standard.string(forKey: Constants.usernameKey),
+           let loginCredentials = await keychainWrapper.get(key: usernameKey) {
+            username = loginCredentials.username
+            password = loginCredentials.password
+
+            print("before initiateLogin")
+            await initiateLogin()
+        }
+    }
+
     func initiateLogin() async {
+        print("isLoading")
         isLoading = true
         do {
+            print("inside do")
             try await login()
+            print("after login")
             try await fetchServers()
+            print("after fetchServers")
             isLoading = false
+            print("before showServers")
             await showServers()
+            print("after showServers")
         } catch NetworkError.noCredentials {
             alertTitle = Constants.noEntryAlertTitle
             alertMessage = Constants.noEntryAlertMessage
@@ -54,14 +72,12 @@ class LoginViewModel: @unchecked Sendable {
             throw NetworkError.noCredentials
         }
 
-        let loginCredentials = try await authService.execute(
-            credentials: LoginCredentials(
-                username: username,
-                password: password
-            )
-        )
+        let loginCredentials = LoginCredentials(username: username, password: password)
+        let loginResponse = try await authService.execute(credentials: loginCredentials)
 
-        await saveToken(loginCredentials.token)
+        keychainWrapper.save(loginCredentials: loginCredentials)
+
+        await saveToken(loginResponse.token)
     }
 
     func fetchServers() async throws {
