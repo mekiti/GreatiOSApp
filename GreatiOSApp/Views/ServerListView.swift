@@ -3,6 +3,7 @@ import Observation
 
 struct ServerListView: View {
     @State var viewModel: ServerListViewModel
+    @Environment(\.dismiss) private var dismiss
 
     var body: some View {
         List {
@@ -45,6 +46,8 @@ struct ServerListView: View {
             }
             ToolbarItem(placement: .topBarTrailing) {
                 Button {
+                    viewModel.logoutAction()
+                    dismiss()
                 } label: {
                     HStack {
                         Text(Constants.logoutString)

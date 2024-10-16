@@ -14,7 +14,7 @@ class APIManager {
             throw NetworkError.badURL
         }
 
-        let request = setupHeader(url: URL, method: .GET, token: token)
+        let request = setupRequest(url: URL, method: .GET, token: token)
 
         let (data, response) = try await session.data(for: request)
 
@@ -36,7 +36,7 @@ class APIManager {
             throw NetworkError.encodingError("Error encoding parameters")
         }
 
-        let request = setupHeader(url: URL, method: .POST, body: jsonData)
+        let request = setupRequest(url: URL, method: .POST, body: jsonData)
 
         let (data, response) = try await session.data(for: request)
 
@@ -49,7 +49,7 @@ class APIManager {
         return decodedData
     }
 
-    private func setupHeader(url: URL, method: Method, token: String? = nil, body: Data? = nil) -> URLRequest {
+    private func setupRequest(url: URL, method: Method, token: String? = nil, body: Data? = nil) -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")

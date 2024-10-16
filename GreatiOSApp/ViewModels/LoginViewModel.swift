@@ -30,10 +30,11 @@ class LoginViewModel: @unchecked Sendable {
     }
 
     func initiateLogin() async {
+        isLoading = true
         do {
-            isLoading = true
             try await login()
             try await fetchServers()
+            isLoading = false
             await showServers()
         } catch NetworkError.noCredentials {
             alertTitle = Constants.noEntryAlertTitle

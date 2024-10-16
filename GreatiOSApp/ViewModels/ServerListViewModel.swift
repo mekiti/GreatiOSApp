@@ -16,5 +16,10 @@ struct ServerListViewModel {
             return servers
         }
     }
+
+    @MainActor
+    func logoutAction() {
+        TokenManager.shared.clear()
+    }
 }
 
