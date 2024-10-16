@@ -7,7 +7,6 @@ class LoginViewModel: @unchecked Sendable {
     private let serversService: ServersServiceProtocol
     private var alertTitle: String?
     private var alertMessage: String?
-    private var loginCredentials: LoginResponse?
 
     var coordinator: AppCoordinator
     var isLoading: Bool = false
@@ -30,38 +29,51 @@ class LoginViewModel: @unchecked Sendable {
         self.coordinator = coordinator
     }
 
-    func login() async {
-        guard !username.isEmpty || !password.isEmpty else {
+    func initiateLogin() async {
+        do {
+            isLoading = true
+            try await login()
+            try await fetchServers()
+            await showServers()
+        } catch NetworkError.noCredentials {
             alertTitle = Constants.noEntryAlertTitle
             alertMessage = Constants.noEntryAlertMessage
             showingAlert = true
-            return
-        }
-
-        do {
-            loginCredentials = try await authService.execute(
-                credentials: LoginCredentials(
-                    username: username,
-                    password: password
-                )
-            )
-
-            if let loginCredentials {
-                servers = try await serversService.execute(token: loginCredentials.token)
-                await didFinishLoading()
-            } else {
-                throw NetworkError.response("Failed to fetch data")
-            }
-
+            isLoading = false
         } catch {
             alertTitle = Constants.loginAlertTitle
             alertMessage = Constants.loginAlertMessage
             showingAlert = true
+            isLoading = false
         }
     }
 
+    func login() async throws {
+        guard !username.isEmpty || !password.isEmpty else {
+            throw NetworkError.noCredentials
+        }
+
+        let loginCredentials = try await authService.execute(
+            credentials: LoginCredentials(
+                username: username,
+                password: password
+            )
+        )
+
+        await saveToken(loginCredentials.token)
+    }
+
+    func fetchServers() async throws {
+        servers = try await serversService.execute()
+    }
+
     @MainActor
-    func didFinishLoading() {
+    func saveToken(_ token: String) {
+        TokenManager.shared.update(token: token)
+    }
+
+    @MainActor
+    func showServers() {
         coordinator.showServers()
     }
 }

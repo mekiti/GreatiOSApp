@@ -26,6 +26,9 @@
 		D36629B02CBEA63A00C67CEA /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629AF2CBEA63A00C67CEA /* LoginViewModel.swift */; };
 		D36629FD2CBEB4B000C67CEA /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629FC2CBEB4B000C67CEA /* Coordinator.swift */; };
 		D36629FF2CBEB4EA00C67CEA /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36629FE2CBEB4EA00C67CEA /* AppCoordinator.swift */; };
+		D3662A042CBFB93B00C67CEA /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A032CBFB93B00C67CEA /* APIManager.swift */; };
+		D3662A062CBFBC8500C67CEA /* TokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A052CBFBC8500C67CEA /* TokenManager.swift */; };
+		D3662A082CBFC4C400C67CEA /* Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3662A072CBFC4C400C67CEA /* Method.swift */; };
 		D37FE03A2CBE5D9200464AC0 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */; };
 		D37FE03B2CBE5D9200464AC0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D37FE0352CBE5D9200464AC0 /* Assets.xcassets */; };
 		D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D37FE0382CBE5D9200464AC0 /* GreatiOSAppApp.swift */; };
@@ -51,6 +54,9 @@
 		D36629AF2CBEA63A00C67CEA /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D36629FC2CBEB4B000C67CEA /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		D36629FE2CBEB4EA00C67CEA /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		D3662A032CBFB93B00C67CEA /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		D3662A052CBFBC8500C67CEA /* TokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenManager.swift; sourceTree = "<group>"; };
+		D3662A072CBFC4C400C67CEA /* Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Method.swift; sourceTree = "<group>"; };
 		D37FE0172CBE5CA900464AC0 /* GreatiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GreatiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D37FE0332CBE5D9200464AC0 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D37FE0352CBE5D9200464AC0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,7 +100,6 @@
 			children = (
 				D36629942CBE945F00C67CEA /* Server.swift */,
 				D36629962CBE947800C67CEA /* SortBy.swift */,
-				D36629A72CBEA49800C67CEA /* NetworkError.swift */,
 				D36629A92CBEA4BB00C67CEA /* LoginCredentials.swift */,
 				D36629AB2CBEA4CE00C67CEA /* LoginResponse.swift */,
 			);
@@ -137,6 +142,17 @@
 			path = Coordinators;
 			sourceTree = "<group>";
 		};
+		D3662A022CBFB90C00C67CEA /* API */ = {
+			isa = PBXGroup;
+			children = (
+				D3662A032CBFB93B00C67CEA /* APIManager.swift */,
+				D3662A052CBFBC8500C67CEA /* TokenManager.swift */,
+				D36629A72CBEA49800C67CEA /* NetworkError.swift */,
+				D3662A072CBFC4C400C67CEA /* Method.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
 		D37FE00E2CBE5CA900464AC0 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +180,7 @@
 		D37FE0392CBE5D9200464AC0 /* GreatiOSApp */ = {
 			isa = PBXGroup;
 			children = (
+				D3662A022CBFB90C00C67CEA /* API */,
 				D36629FB2CBEB49E00C67CEA /* Coordinators */,
 				D36629A02CBE97B700C67CEA /* Services */,
 				D366299D2CBE96D400C67CEA /* Repositories */,
@@ -260,11 +277,14 @@
 				D36629882CBE852900C67CEA /* ServerListView.swift in Sources */,
 				D36629FD2CBEB4B000C67CEA /* Coordinator.swift in Sources */,
 				D36629AC2CBEA4CE00C67CEA /* LoginResponse.swift in Sources */,
+				D3662A082CBFC4C400C67CEA /* Method.swift in Sources */,
 				D36629AA2CBEA4BB00C67CEA /* LoginCredentials.swift in Sources */,
 				D36629B02CBEA63A00C67CEA /* LoginViewModel.swift in Sources */,
 				D37FE03D2CBE5D9200464AC0 /* GreatiOSAppApp.swift in Sources */,
+				D3662A062CBFBC8500C67CEA /* TokenManager.swift in Sources */,
 				D36629952CBE945F00C67CEA /* Server.swift in Sources */,
 				D36629FF2CBEB4EA00C67CEA /* AppCoordinator.swift in Sources */,
+				D3662A042CBFB93B00C67CEA /* APIManager.swift in Sources */,
 				D36629A22CBE97DA00C67CEA /* ServersService.swift in Sources */,
 				D366299C2CBE96B900C67CEA /* ServerListViewModel.swift in Sources */,
 				D36629442CBE622300C67CEA /* Constants.swift in Sources */,

@@ -3,15 +3,14 @@ import SwiftUI
 @MainActor
 @Observable
 class AppCoordinator: @preconcurrency Coordinator {
-    private var authRepo = AuthRepositoryImpl()
-    private var serversRepo = ServerRepositoryImpl()
+    private let apiManager = APIManager()
     var navigationPath = NavigationPath()
 
     func start() -> some View {
         LoginView(
             viewModel: LoginViewModel(
-                authService: AuthService(repository: authRepo),
-                serversService: ServersService(repository: serversRepo),
+                authService: AuthService(repository: AuthRepositoryImpl(apiManager: apiManager)),
+                serversService: ServersService(repository: ServerRepositoryImpl(apiManager: apiManager)),
                 coordinator: self
             )
         )
