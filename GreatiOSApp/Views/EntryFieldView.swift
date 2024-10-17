@@ -14,7 +14,7 @@ struct EntryFieldView: View {
     }
 
     var body: some View {
-        HStack(spacing: 0) {
+        HStack(spacing: Constants.contentSpacing) {
             Image(icon)
                 .resizable()
                 .frame(

@@ -26,6 +26,8 @@ struct Constants {
     static let imagePadding = CGFloat(40)
     static let entryFieldPadding = CGFloat(16)
     static let buttonPadding = CGFloat(24)
+    static let loadingSpacing = CGFloat(8)
+    static let contentSpacing = CGFloat(0)
 
     struct EntryFieldView {
         static let padding = CGFloat(8)

@@ -17,7 +17,7 @@ struct LoginView: View {
                     .ignoresSafeArea()
                 
                 if viewModel.isLoading {
-                    VStack(spacing: 8) {
+                    VStack(spacing: Constants.loadingSpacing) {
                         ProgressView()
                             .font(.footnote)
                         
@@ -25,7 +25,7 @@ struct LoginView: View {
                             .foregroundStyle(.loadingText)
                     }
                 } else {
-                    VStack(spacing: 0) {
+                    VStack(spacing: Constants.contentSpacing) {
                         Image(.logo)
                             .padding(.bottom, Constants.imagePadding)
                         
